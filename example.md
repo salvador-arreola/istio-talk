@@ -2,16 +2,15 @@
 theme: ./
 colorSchema: 'light'
 layout: intro
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
-introImage: 'https://img2.storyblok.com/312x312/filters:format(webp)/f/79165/400x400/1082ff0d24/dawntraoz-alba-silvente.jpg'
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+introImage: 'https://www.redhat.com/rhdc/managed-files/ohc/Screen-Shot-2017-05-22-at-11_29_24-PM.png'
 ---
 
-# Unicorn slidev theme
+# The Invisible Mesh
 
-Presentation slides for developers
-
+The Art of Orchestrating Microservices with Istio
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 p-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -20,120 +19,255 @@ Presentation slides for developers
 </div>
 
 ---
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
-layout: cover-logos
-logos: [
-  'https://img2.storyblok.com/256x0/filters:format(webp)/f/86387/x/4cf6a70a8c/logo-white-text.svg',
-  '/nuxt-emoji-white.png',
-  '/storyblok.png'
-]
----
-
-Frontend Developer Consultant at **@passionpeopleNL**
-Blogger, speaker and open source lover
-
-Ambassador at **@nuxt_js** and **@storyblok**
-
----
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
 layout: table-contents
 gradientColors: ['#A21CAF', '#5B21B6']
 ---
 
-# What is Slidev?
+# What is Istio?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-  
-- 📝 **Text-based** - focus on the content with Markdown
-- 🎨 **Themable** - create your theme
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding
-- 🤹 **Interactive** - embedding Vue components
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a host it
-- 🛠 **Hackable** - anything possible on a webpage
+- 🧠 A **Service Mesh** for Kubernetes
+- 📦 Uses **Envoy sidecars** to manage traffic
+- 🛠️ Runs as a **control plane** (Istiod)
+- 🔄 Injects policies at the network layer
 
 ---
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
-layout: new-section
-sectionImage: 'https://images.unsplash.com/photo-1711091189179-53ec364d4bf3?q=80&w=3054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: table-contents
+gradientColors: ['#A21CAF', '#5B21B6']
 ---
 
-# This is a new section
-Some content to explain
+# 💡 Why use a Service Mesh?
 
-<!--
-Add some notes to your slides!
--->
-
----
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd> | next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+- ⚙️ Centralized traffic management
+- 🔐 Built-in security: mTLS, RBAC
+- 📈 Observability: metrics, logs, traces
+- 🚫 No changes to application code
 
 ---
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
 layout: image-center
-image: 'https://source.unsplash.com/collection/94734566/1920x1080'
+image: 'Istio-drawio.svg'
 imageWidth: '450'
 imageHeight: '950'
 ---
 
-# Image centered
+# Istio architecture
 
-Making use of `image-center` layout.
+An Istio service mesh is logically split into a **data plane** and a **control plane**.
 
 ---
-logoHeader: '/logo.svg'
-website: 'dawntraoz.com'
-handle: 'dawntraoz'
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: table-contents
+gradientColors: ['#A21CAF', '#5B21B6']
+---
+
+# 🧱 Istio Components
+
+- 🧭 **Istiod** – control plane
+- 📦 **Envoy** – sidecar proxies
+- 🚪 **Ingress/Egress Gateways**
+- 🧾 **CRDs** – Gateway, VirtualService, DestinationRule, AuthorizationPolicy...
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
 layout: cover
 ---
 
-# Code
+# 🔁 Traffic Management
 
-Use code snippets and get the highlighting directly!
+- 🧪 Route based on request path/headers/query strings/etc.
+- 🔄 Canary releases & A/B testing
 
-```ts
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
+```yaml{*}{maxHeight:'400px'}
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: demo-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
 ```
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 🔁 Traffic Management
+
+```yaml{*}{maxHeight:'350px'}
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+metadata:
+  name: helloworld-vs
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - demo-gateway
+  http:
+  - match:
+    - uri:
+        exact: /hello
+    route:
+    - destination:
+        host: helloworld
+        port:
+          number: 5000
+```
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 🪪 Authentication with JWT
+
+- 🔑 JWT token validation 
+- 🔐 Combine with **AuthorizationPolicy**
+
+```yaml
+apiVersion: security.istio.io/v1
+kind: RequestAuthentication
+metadata:
+  name: "jwt-example"
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      istio: ingressgateway
+  jwtRules:
+  - issuer: "testing@secure.istio.io"
+    jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.26/security/tools/jwt/samples/jwks.json"
+```
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 🔐 Enabling mTLS
+
+- 🔒 Encrypt all service-to-service traffic
+- 🚫 Block non-mTLS traffic
+
+```yaml
+apiVersion: security.istio.io/v1
+kind: PeerAuthentication
+metadata:
+  name: default
+spec:
+  mtls:
+    mode: STRICT
+```
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 📊 Observability Built-in
+
+- 📈 **Prometheus** – Metrics
+- 📉 **Grafana** – Dashboards
+- 🔍 **Jaeger** – Tracing
+- 🧭 **Kiali** – Mesh visualization
+<pre>
+
+
+</pre>
+>**All available out-of-the-box**
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 🔧 Use Cases
+<pre> </pre>
+✅ Canary deployments  
+✅ Zero trust networking  
+✅ Auditing and compliance  
+✅ Traffic shaping and failover  
+✅ Real-time service observability
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: new-section
+sectionImage: '/live-demo.png
+
+
+'
+---
+
+# 🧪 Demo time
+🔁 Traffic routing <br/>
+❌ Block unauthenticated traffic <br/>
+🔐 Encrypted connections <br/>
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# ⚖️ Important notes
+
+- 📊 Overhead: ~10–15% CPU/memory
+- 🧪 Optimizations:
+  - Ambient mesh (no sidecar)
+  - Gateways API (https://gateway-api.sigs.k8s.io/)
+- 💡 Worth it for production control & security
+
+---
+logoHeader: '/softserve-logo.png'
+website: 'softserveinc.com'
+handle: 'salvador-arreola'
+layout: cover
+---
+
+# 🧠 Takeaways
+
+- ⚙️ Istio abstracts networking and security
+- 🧬 Integrates natively with Kubernetes
+- 🔐 Adds zero-trust and encryption with no code changes
+- 🚀 Great for any size of microservice deployment
 
 ---
 layout: center
 ---
 
-# Thank you
+# Thanks for attending! 🙏
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+[Documentation](https://istio.io/)

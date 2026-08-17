@@ -1,6 +1,6 @@
 <template>
   <header v-if="logoHeader">
-    <img :src="logoSrc" width="60" height="60" class="object-contain" />
+    <img :src="logoSrc" width="100" height="100" class="object-contain" />
   </header>
 </template>
 
