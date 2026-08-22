@@ -25,7 +25,7 @@ import Default from "./default.vue";
 const props = defineProps({
   sectionImage: {
     type: String,
-    default: "../public/section-illustration.svg",
+    default: "/cncf-logo.svg",
   },
 });
 const imageSrc = computed(() => resolveAssetUrl(props.sectionImage));

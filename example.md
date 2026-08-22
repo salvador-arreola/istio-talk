@@ -79,10 +79,10 @@ gradientColors: ['#0086FF', '#0086FF']
 
 # Istio Components
 
-- **Istiod** – control plane
-- **Envoy** – sidecar proxies
+- **Istiod** - control plane
+- **Envoy** - sidecar proxies
 - **Ingress/Egress Gateways**
-- **CRDs** – Gateway, VirtualService, DestinationRule, AuthorizationPolicy...
+- **CRDs** - Gateway, VirtualService, DestinationRule, AuthorizationPolicy...
 
 ---
 logoHeader: '/cncf-logo.svg'
@@ -201,10 +201,10 @@ layout: cover
 
 # Observability Built-in
 
-- **Prometheus** – Metrics
-- **Grafana** – Dashboards
-- **Jaeger** – Tracing
-- **Kiali** – Mesh visualization
+- **Prometheus** - Metrics
+- **Grafana** - Dashboards
+- **Jaeger** - Tracing
+- **Kiali** - Mesh visualization
 <pre>
 
 
