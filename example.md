@@ -100,17 +100,17 @@ layout: cover
 apiVersion: networking.istio.io/v1
 kind: Gateway
 metadata:
- name: demo-gateway
+  name: demo-gateway
 spec:
- selector:
- istio: ingressgateway
- servers:
- - port:
- number: 80
- name: http
- protocol: HTTP
- hosts:
- - "*"
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
 ```
 
 ---
@@ -126,21 +126,21 @@ layout: cover
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
- name: helloworld-vs
+  name: helloworld-vs
 spec:
- hosts:
- - "*"
- gateways:
- - demo-gateway
- http:
- - match:
- - uri:
- exact: /hello
- route:
- - destination:
- host: helloworld
- port:
- number: 5000
+  hosts:
+  - "*"
+  gateways:
+  - demo-gateway
+  http:
+  - match:
+    - uri:
+        exact: /hello
+    route:
+    - destination:
+        host: helloworld
+        port:
+          number: 5000
 ```
 
 ---
@@ -159,15 +159,15 @@ layout: cover
 apiVersion: security.istio.io/v1
 kind: RequestAuthentication
 metadata:
- name: "jwt-example"
- namespace: istio-system
+  name: "jwt-example"
+  namespace: istio-system
 spec:
- selector:
- matchLabels:
- istio: ingressgateway
- jwtRules:
- - issuer: "testing@secure.istio.io"
- jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.26/security/tools/jwt/samples/jwks.json"
+  selector:
+    matchLabels:
+      istio: ingressgateway
+  jwtRules:
+  - issuer: "testing@secure.istio.io"
+    jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.26/security/tools/jwt/samples/jwks.json"
 ```
 
 ---
@@ -186,10 +186,10 @@ layout: cover
 apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
- name: default
+  name: default
 spec:
- mtls:
- mode: STRICT
+  mtls:
+    mode: STRICT
 ```
 
 ---
