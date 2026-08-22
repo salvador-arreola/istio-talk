@@ -33,7 +33,7 @@ const imageSrc = computed(() => resolveAssetUrl(props.sectionImage));
 
 <style>
 .slidev-layout.new-section {
-  @apply bg-gradient-to-r from-fuchsia-700 to-purple-800 text-white;
+  @apply bg-[#0086FF] text-white;
 }
 
 .slidev-layout.new-section *,

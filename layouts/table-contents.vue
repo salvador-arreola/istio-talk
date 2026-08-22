@@ -117,7 +117,7 @@ import Default from "../layouts/default.vue";
 const props = defineProps({
   gradientColors: {
     type: Array,
-    default: () => ["#A21CAF", "#5B21B6"],
+    default: () => ["#0086FF", "#0086FF"],
   },
 });
 </script>

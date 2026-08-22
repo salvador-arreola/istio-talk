@@ -6,7 +6,7 @@
       </div>
       <div class="w-1/2 flex items-center justify-center">
         <div
-          class="flex flex-wrap items-center justify-center p-4 w-72 h-72 rounded-full bg-gradient-to-r from-fuchsia-700 to-purple-800 dark:(from-white to-purple-50)"
+          class="flex flex-wrap items-center justify-center p-4 w-72 h-72 rounded-full bg-[#0086FF] dark:bg-[#93EAFF]"
         >
           <div class="flex flex-wrap items-center justify-center -mr-2">
             <figure v-for="(logo, i) in logoSources" :key="i" class="pr-2 pb-2">

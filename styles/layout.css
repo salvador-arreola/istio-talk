@@ -1,14 +1,23 @@
 @font-face {
-  font-family: "Gilroy Bold";
+  font-family: "Clarity City";
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: local("Gilroy Bold"),
-    url("../public/fonts/Gilroy-Bold.woff") format("woff");
+  src: local("Clarity City Bold"),
+    url("../public/fonts/ClarityCity-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Clarity City";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local("Clarity City Regular"),
+    url("../public/fonts/ClarityCity-Regular.woff2") format("woff2");
 }
 
 :root {
-  --slidev-theme-primary: #5d8392;
+  --slidev-theme-primary: #0086ff;
 }
 
 .slidev-layout {
@@ -34,7 +43,7 @@
   h4,
   h5,
   h6 {
-    @apply font-bold font-title bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-700 to-purple-800 dark:(from-white to-purple-50);
+    @apply font-bold font-title text-[#0086FF] dark:text-[#93EAFF];
   }
 
   h1 {
@@ -54,7 +63,7 @@
   }
 
   strong {
-    @apply text-purple-800 dark:text-purple-100;
+    @apply text-[#0086FF] dark:text-[#93EAFF];
   }
 
   h1 + p {

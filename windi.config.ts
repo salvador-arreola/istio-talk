@@ -13,13 +13,14 @@ export default mergeWindicssConfig(
     },
     shortcuts: {
       // custom the default background
-      'bg-main': 'bg-gradient-to-r from-white to-purple-50 text-gray-900 dark:(from-fuchsia-700 to-purple-800 text-white)',
+      'bg-main': 'bg-[#FFFFFF] text-black dark:(bg-[#000000] text-white)',
     },
     theme: {
       extend: {
         // fonts can be replaced here, remember to update the web font links in `index.html`
         fontFamily: {
-          title: ['Gilroy Bold', 'sans-serif'],
+          title: ['Clarity City', 'sans-serif'],
+          sans: ['Clarity City', 'sans-serif'],
         },
       },
     },
